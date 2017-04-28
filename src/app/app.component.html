@@ -1,3 +1,73 @@
-<h1>
-  {{title}}
-</h1>
+<div id="container">
+
+	<!-- HEADER -->
+	<header>
+		<div class="width">
+
+			<!-- TITRE -->
+			<h1><a href="/">Rapide<strong>Facture</strong></a></h1>
+
+			<!-- MENU GENERAL -->
+			<nav>
+				<ul class="sf-menu dropdown">
+					<li routerLinkActive="selected"><a [routerLink]="['home']"><i class="fa fa-home"></i> Accueil</a></li>
+					<!--	<li>
+				<a href="examples.html"><i class="fa fa-code"></i> Style examples</a>
+				<ul>
+					<li><a href="three-column.html">Three Column</a></li>
+					<li><a href="one-column.html">One Column</a></li>
+					<li><a href="text.html">Text page</a></li>
+				</ul>
+			</li>-->
+					<li routerLinkActive="selected"><a [routerLink]="['customers']"><i class="fa fa-briefcase"></i> Clients</a></li>
+					<!--		<li><a href="#"><i class="fa fa-briefcase"></i> Services</a></li> -->
+					<li routerLinkActive="selected"><a [routerLink]="['contact']"><i class="fa fa-phone"></i> Contact</a></li>
+				</ul>
+				<div class="clear"></div>
+			</nav>
+			<!-- FIN MENU GENERAL -->
+		</div>
+		<div class="clear"></div>
+	</header>
+	<!-- FIN HEADER -->
+
+	<!--<p *ngIf="userService.isLogged" class="k-basket-sum">
+  <a [routerLink]="['basket']" title="See basket details">
+    <strong>
+					{{userService.basket.getItems().length}}
+				</strong> item(s) in your basket
+  </a>
+</p>
+
+<p *ngIf="userService.isLogged" class="k-login-data">
+  Welcome,
+  <span id="user-name">
+				<a [routerLink]="['profile']">
+					{{userService.getUser().firstName}}
+					{{userService.getUser().lastName}}
+				</a>
+			</span> [
+  <strong><a href="#" (click)="logout()" >Logout</a></strong>]
+</p>-->
+
+	<!--<p *ngIf="!userService.isLogged" id="loginLink" class="k-login-data">-->
+	<!--	<a [routerLink]="['login']">Sign-in</a> -->
+	<!--</p>-->
+
+	<div id="body" class="width">
+		<div id="main" role="main">
+			<router-outlet></router-outlet>
+		</div>
+
+		<!-- <aside role="complementary">
+		</aside> -->
+	</div>
+
+	<footer>
+		<div class="clear"></div>
+		<!--<div class="endfooter"><a [routerLink]="['contact']">Contact Us</a></div>-->
+		<div class="footer-bottom">
+			<p>&copy; NG2-Demo 2017.</p>
+		</div>
+	</footer>
+</div>
