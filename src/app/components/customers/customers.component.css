@@ -1,0 +1,8 @@
+tr:nth-of-type(odd) {
+      background-color:#FAFAFA;
+      color:#848484;
+}
+tr:hover { 
+     background-color:#E0E6F8;
+     cursor: pointer; 
+}

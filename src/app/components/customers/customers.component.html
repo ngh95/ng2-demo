@@ -3,29 +3,39 @@
 
   <h3>Liste des clients</h3>
 
+<!-- Resultats -->
   <table cellspacing="0">
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Age</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>John Smith</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Fred James</td>
-      <td>49</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Rachel Johnson</td>
-      <td>19</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Ville</th>
+        <th>email</th>
+        <!--<th>Date de création</th>-->
+      </tr>
+    </thead>
 
+    <tr *ngFor="let customer of customers" [routerLink]="['/customer-detail', customer.cli_id]" >
+      <td>{{customer?.cli_id}}</td>
+      <td>{{customer?.cli_nom}}</td>
+      <td>{{customer?.cli_prenom}}</td>
+      <td>{{customer?.cli_ville}}</td>
+      <td>{{customer?.cli_email}}</td>
+      <!--<td>{{customer?.cli_date_creation | date: 'dd/MM/yyyy'}}</td>-->
+    </tr>
   </table>
+
+   <!--<div>
+        <div *ngIf="currentCustomer">
+            <h3>Id customer: {{ currentCustomer.cli_id  }}</h3>
+            <ul>
+                <li>Nom: {{ currentCustomer.cli_nom }}</li>
+                <li>Prenom: {{ currentCustomer.cli_prenom }}</li>
+                <li>email: {{ currentCustomer.cli_email }}</li>
+            </ul>
+        </div>  
+    </div>-->
 
   <p>&nbsp;</p>
 </div>

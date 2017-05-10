@@ -12,13 +12,17 @@ import { LoginComponent } from './components/login/login.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+import { CustomersService } from './services/customers.service';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     CustomersComponent,
-    ContactComponent
+    ContactComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { ContactComponent } from './components/contact/contact.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [CustomersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

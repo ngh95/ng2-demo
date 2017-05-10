@@ -1,0 +1,46 @@
+
+<!-- ajout/modification client-->
+<article>
+  <fieldset>
+    <legend>Ajouter un nouveau client</legend>
+    <form novalidate>
+      <div class="form-group">
+        <p><label for="">Nom</label></p>
+        <input type="text" class="form-control" [(ngModel)]="customer.cli_nom" name="cli_nom">
+        <!--<small [hidden]="customerForm.controls.name.valid || (customerForm.controls.name.pristine && !submitted)" class="text-danger"> Donnée obligatoire</small>-->
+      </div>
+       <div class="form-group">
+        <p><label for="">Prénom</label></p>
+        <input type="text" class="form-control" [(ngModel)]="customer.cli_prenom" name="cli_prenom">
+        <!--<small [hidden]="customerForm.controls.firstName.valid || (customerForm.controls.firstName.pristine && !submitted)" class="text-danger"> Donnée obligatoire</small>-->
+      </div>
+      <div class="form-group">
+       <p> <label for="">Addresse</label></p>
+        <input type="text" class="form-control" [(ngModel)]="formCustomer.cli_adresse1" name="cli_adresse1">
+        <!--<small [hidden]="customerForm.controls.address.controls.street.valid || (customerForm.controls.address.controls.street.pristine && !submitted)" class="text-danger"> Donnée obligatoire </small>-->
+      </div>
+      <div class="form-group">
+        <p><label for="">Code postal</label></p>
+        <input type="text" class="form-control" [(ngModel)]="formCustomer.cli_cp" name="cli_cp">
+        <!--<small [hidden]="customerForm.controls.zipCode.valid || (customerForm.controls.zipCode.pristine && !submitted)" class="text-danger"> Donnée obligatoire</small>-->
+      </div>
+       <div class="form-group">
+        <p><label for="">Ville</label></p>
+        <input type="text" class="form-control" [(ngModel)]="formCustomer.city" name="city">
+         <!--<small [hidden]="customerForm.controls.city.valid || (customerForm.controls.city.pristine && !submitted)" class="text-danger"> Ville invalide</small>-->
+      </div>
+       <div class="form-group">
+        <p><label for="">Email</label></p>
+        <input type="text" class="form-control" [(ngModel)]="formCustomer.cli_email" name="cli_email">
+        <!--<small [hidden]="customerForm.controls.email.valid || (customerForm.controls.email.pristine && !submitted)" class="text-danger"> Email invalide</small>-->
+      </div>
+       <div class="form-group">
+        <p><label for="">Téléphone</label></p>
+        <input type="text" class="form-control" [(ngModel)]="formCustomer.cli_tel" name="cli_tel">
+        <!--<small [hidden]="customerForm.controls.tel.valid || (customerForm.controls.tel.pristine && !submitted)" class="text-danger"> Donnée obligatoire</small>-->
+      </div>
+      <!--<p><button type="submit" class="btn btn-default">Submit</button></p>-->
+    </form>
+  </fieldset>
+</article>
+<!-- ajout/modification client-->
