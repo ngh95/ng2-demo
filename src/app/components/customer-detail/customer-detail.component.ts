@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Customer } from '../../beans/customer';
 import { CustomersService } from '../../services/customers.service';
+import { ActivatedRoute  }  from '@angular/router';
 
 @Component({
   selector: 'app-customer-detail',
@@ -16,11 +17,11 @@ export class CustomerDetailComponent implements OnInit {
   public events: any[] = [];
   formCustomer: Customer = {};
 
-  id : number;
-  customer:Customer;
+  customerId : number;
+  customer:Customer = {};
+  private sub: any;
 
-
-  constructor(private _fb: FormBuilder, private customersService: CustomersService) { }
+  constructor(private _fb: FormBuilder, private customersService: CustomersService,  private route: ActivatedRoute) { }
 
   ngOnInit() {
     // this.customerForm = this._fb.group({
@@ -34,9 +35,18 @@ export class CustomerDetailComponent implements OnInit {
     //   }),
     //   tel :['',<any>Validators.maxLength(10)]
     // });
+  this.sub = this.route.params.subscribe( params => {
+        this.customerId = +params['id'];
+	   	this.customersService.getCustomerById(this.customerId)
+			.subscribe((customer: Customer) => {
+				this.customer = customer;
+        console.log('nom=' + customer.cli_nom);
+        console.log('prenom=' + customer.cli_prenom);
+			});
+    	});
 
     // this. subcribeToFormChanges();
-    return this.getCustomerById(this.id);
+  //  return this.getCustomerById(this.id);
   }
 
     addCustomer = () => {

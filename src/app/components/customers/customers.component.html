@@ -9,7 +9,7 @@
       <tr>
         <th>ID</th>
         <th>Nom</th>
-        <th>Prénom</th>
+        <!--<th>Prénom</th>-->
         <th>Ville</th>
         <th>email</th>
         <!--<th>Date de création</th>-->
@@ -19,7 +19,7 @@
     <tr *ngFor="let customer of customers" [routerLink]="['/customer-detail', customer.cli_id]" >
       <td>{{customer?.cli_id}}</td>
       <td>{{customer?.cli_nom}}</td>
-      <td>{{customer?.cli_prenom}}</td>
+      <!--<td>{{customer?.cli_prenom}}</td>-->
       <td>{{customer?.cli_ville}}</td>
       <td>{{customer?.cli_email}}</td>
       <!--<td>{{customer?.cli_date_creation | date: 'dd/MM/yyyy'}}</td>-->

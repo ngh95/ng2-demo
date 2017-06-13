@@ -19,10 +19,10 @@
 					<li><a href="text.html">Text page</a></li>
 				</ul>
 			</li>-->
-					<li routerLinkActive="selected">
+					<li>
 						<a [routerLink]="['customers']"><i class="fa fa-user"></i> Clients</a>
 						<ul>
-							<li><a [routerLink]="['customer-detail']">Ajouter un nouveau client</a></li>
+							<li routerLinkActive="selected"><a [routerLink]="['customer-detail','0']">Ajouter un nouveau client</a></li>
 						</ul>
 					</li>
 					<li routerLinkActive="selected"><a [routerLink]="['contact']"><i class="fa fa-phone"></i> Contact</a></li>

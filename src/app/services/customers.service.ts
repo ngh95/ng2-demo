@@ -26,7 +26,7 @@ export class CustomersService {
 		if (this.cutomers$ !== undefined) {
 			return this.cutomers$;
 		}
-		return this.http.get('/api/customers/1')
+		return this.http.get('/api/customers')
 			.map((response: Response): Customer[] => {
 				let customers: Customer[] = <Customer[]>response.json();
 				return customers;
@@ -48,7 +48,7 @@ export class CustomersService {
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
 		let postOptions = new RequestOptions({ headers: headers });
-		return this.http.post('/api/customers/1', JSON.stringify(customer), postOptions)
+		return this.http.post('/api/customers', JSON.stringify(customer), postOptions)
 		// .do( (response: Response) => {
 		// 	let addedNews: News = <News>response.json();
 		// 	this.theNews = this.theNews
@@ -56,8 +56,8 @@ export class CustomersService {
 		// } );
 	}
 
-		deleteCustomer= (customer: Customer) => {
-		return this.http.delete('/api/customers/' + customer.cli_id);
+		deleteCustomer= (id: number) => {
+		return this.http.delete('/api/customers/' + id);
 	}
 
 }

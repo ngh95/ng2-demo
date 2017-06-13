@@ -13,9 +13,9 @@ REST_ROUTER.prototype.handleRoutes= function(router,connection,md5) {
 // see example in https://codeforgeek.com/2015/03/restful-api-node-and-express-4/
 
     // LECTURE DES UTILISATEURS
-    router.get("/customers/:societe_id",function(req,res){
+    router.get("/customers",function(req,res){
         var query = "SELECT * FROM ?? WHERE ??=? ORDER BY cli_date_creation desc";
-        var table = ["client","societe_id", req.params.societe_id];
+        var table = ["client","societe_id", '1'];
         query = mysql.format(query,table);
         connection.query(query,function(err,rows){
             if(err) {
@@ -95,7 +95,7 @@ router.get("/customers/:cli_id",function(req,res){
             if(err) {
                 res.json({"Error" : true, "Message" : "Error executing MySQL query :" + err});
             } else {
-                res.json(rows);
+                res.json(rows[0]); // return first result
             }
         });
     });
